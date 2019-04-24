@@ -1,0 +1,63 @@
+create tablespace MID_TERM datafile 'MID_TERM01' size 50M;
+
+create user ahernandez
+identified by ahernandez
+default tablespace MID_TERM;
+
+
+GRANT CREATE SESSION TO ahernandez;
+GRANT CREATE TABLE TO ahernandez;
+GRANT CONNECT TO ahernandez;
+
+Create table departamentos(id number, 
+nombre varchar2(255) not null, 
+Constraint Pk_departamentos  Primary key  (id));
+
+Create table municipios(id number, 
+departamento_id number,
+nombre varchar2(255) not null, 
+Constraint Pk_municipios  Primary key  (id));
+
+Create table proyectos(id number, 
+nombre varchar2(255) not null, 
+Constraint Pk_proyectos  Primary key  (id));
+
+Create table peajes(id number, 
+municipio_id number,
+proyecto_id number,
+nombre_estacion_peaje varchar2(255) not null,
+tarifa_plena_i number(19,4), 
+tarifa_plena_ii number(19,4), 
+tarifa_plena_iii number(19,4), 
+tarifa_plena_iv number(19,4), 
+tarifa_plena_v number(19,4), 
+tarifa_plena_vi number(19,4), 
+tarifa_plena_vii number(19,4), 
+tarifa_plena_viii number(19,4), 
+tarifa_plena_ix number(19,4), 
+tarifa_plena_ie10 number(19,4), 
+tarifa_plena_iee number(19,4), 
+tarifa_plena_ieee number(19,4), 
+tarifa_plena_iia number(19,4), 
+tarifa_plena_ea number(19,4), 
+tarifa_plena_eg number(19,4), 
+tarifa_plena_er number(19,4), 
+tarifa_plena_ec number(19,4), 
+tarifa_especial_i number(19,4), 
+tarifa_especial_ii number(19,4), 
+tarifa_especial_iii number(19,4), 
+tarifa_especial_iv number(19,4), 
+tarifa_especial_v number(19,4), 
+tarifa_especial_vi number(19,4), 
+tarifa_especial_vii number(19,4), 
+tarifa_especial_viii number(19,4), 
+tarifa_especial_ix number(19,4), 
+tarifa_especial_ie10 number(19,4), 
+tarifa_especial_iee number(19,4), 
+tarifa_especial_ieee number(19,4), 
+tarifa_especial_iia number(19,4), 
+tarifa_especial_ea number(19,4), 
+tarifa_especial_eg number(19,4), 
+tarifa_especial_er number(19,4), 
+tarifa_especial_ec number(19,4),
+Constraint Pk_peajes  Primary key  (id));
